@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file('base.jks')
+            storePassword "base2018"
+            keyAlias "base"
+            keyPassword "base2018"
+        }
+    }
+
+    compileSdkVersion 26
+
+    defaultConfig {
+        applicationId "com.sfan.app.base"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+        // 设置MultiDex可用
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':lib-app')
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:8.7.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
+    // MultiDex的依赖
+    implementation 'com.android.support:multidex:1.0.2'
+    //RxPermissions
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.3@aar'
+    //RxJava2
+    implementation "io.reactivex.rxjava2:rxjava:2.0.0"
+    // RecyclerView
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+}

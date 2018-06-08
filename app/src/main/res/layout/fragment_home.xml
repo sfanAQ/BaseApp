@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sfan.app.base.HomeFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTheme"
+        android:fitsSystemWindows="true"
+        android:gravity="center_vertical"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="@drawable/selector_drawable_icon_tab"
+        app:title=" ">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_gravity="center"
+            android:contentDescription="@string/page_title"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_launcher"/>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="1dp"
+                android:lineSpacingMultiplier="1"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="@string/no_data"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/drawerLeft"
+            layout="@layout/layout_drawer_menu"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"/>
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

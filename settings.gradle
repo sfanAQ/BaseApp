@@ -1,0 +1,1 @@
+include ':app', ':lib-app', ':lib-baidu', ':lib-amap'

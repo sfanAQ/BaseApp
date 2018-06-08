@@ -1,0 +1,21 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sfan.app.base.EmptyFragment">
+
+    <TextView
+        android:id="@+id/txtEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="1dp"
+        android:lineSpacingMultiplier="1"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="@string/no_data"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"/>
+</RelativeLayout>

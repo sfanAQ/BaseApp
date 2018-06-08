@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主页面标签-->
+    <string-array name="home_tabs">
+        <item>@string/home_page</item>
+        <item>@string/sports_rankings</item>
+        <item>  </item>
+        <item>@string/health_records</item>
+        <item>@string/personal_information</item>
+    </string-array>
+    <!--抽屉菜单-->
+    <string-array name="drawer_menus">
+        <item>@string/intellectual_road_model</item>
+        <item>@string/sports_course</item>
+        <item>@string/sports_rankings</item>
+        <item>@string/health_records</item>
+        <item>@string/personal_information</item>
+        <item>@string/gait_introduction</item>
+        <item>@string/health_risk_assessment</item>
+    </string-array>
+    <!--抽屉菜单 小图标-->
+    <integer-array name="icons_drawer_menus">
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+        <item>@drawable/selector_drawable_icon_tab</item>
+    </integer-array>
+
+</resources>
